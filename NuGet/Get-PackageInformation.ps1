@@ -11,8 +11,6 @@ Param(
     $outputPath = "."
 )
 
-#Get-Package | Select -Unique @{name="Name";expression={$_.Id}},@{name="Version";expression={$_.Version.Version.tostring()}},@{name="ComponentUri";expression={"https://www.nuget.org/packages/$($_.Id)/"}},LicenseUri | convertto-json
-
 $global:packagesFromConfigs = @()
 
 foreach ($path in $paths) {
