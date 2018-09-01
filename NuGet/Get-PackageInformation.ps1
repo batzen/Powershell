@@ -70,7 +70,7 @@ foreach ($packageFromConfig in $global:packagesFromConfigs) {
     }
 
     #Write-Output $package
-    $finalPackage = $package | Select-Object Name,Version,@{name="ComponentUri";expression={$projectUri}},@{name="LicenseUri";expression={$licenseUri}}
+    $finalPackage = $package | Select-Object Name,@{name="ComponentUri";expression={$projectUri}},@{name="LicenseUri";expression={$licenseUri}}
 
     Write-Verbose "Final package information: $finalPackage"
     Write-Verbose "Processed $($package.name) ($($package.version))."
